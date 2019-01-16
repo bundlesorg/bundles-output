@@ -1,0 +1,42 @@
+{
+  "name": "@bundles/bundles-output",
+  "version": "0.0.1",
+  "description": "A bundler plugin for Bundles which outputs compiled results to a user defined path(s).",
+  "keywords": ["brikcss", "bundles", "bundler", "output"],
+  "license": "MIT",
+  "author": "Brikcss <https://github.com/brikcss>",
+  "contributors": ["The Zimmee <thezimmee@gmail.com>"],
+  "homepage": "https://github.com/brikcss/bundles-output",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brikcss/bundles-output.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brikcss/bundles-output/issues"
+  },
+  "files": ["lib"],
+  "main": "./lib/bundles-output.min.js",
+  "publishConfig": {
+    "tag": "dev",
+    "access": "public"
+  },
+  "scripts": {
+    "start": "npm run watch",
+    "test": "standard *.js && jest --coverage && cat coverage/lcov.info | coveralls && cat coverage/lcov.info | codacy-coverage",
+    "unit": "jest",
+    "watch": "jest --watchAll"
+  },
+  "devDependencies": {
+    "@brikcss/git-hooks": "^2.1.0",
+    "@node-minify/cli": "^4.1.0",
+    "@node-minify/uglify-es": "^4.0.5",
+    "codacy-coverage": "^3.3.0",
+    "coveralls": "^3.0.2",
+    "jest": "^23.6.0",
+    "semantic-release": "^15.12.0"
+  },
+  "dependencies": {
+    "@bundles/core": "github:brikcss/bundles-core",
+    "fs-extra": "^7.0.1"
+  }
+}
