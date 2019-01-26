@@ -3,9 +3,9 @@
 <!-- Shields. -->
 <p>
     <!-- NPM version. -->
-    <a href="https://www.npmjs.com/package/@brikcss/bundles-output"><img alt="NPM version" src="https://img.shields.io/npm/v/@brikcss/bundles-output.svg?style=flat-square"></a>
+    <a href="https://www.npmjs.com/package/@bundles/bundles-output"><img alt="NPM version" src="https://img.shields.io/npm/v/@bundles/bundles-output.svg?style=flat-square"></a>
     <!-- NPM downloads/month. -->
-    <a href="https://www.npmjs.com/package/@brikcss/bundles-output"><img alt="NPM downloads per month" src="https://img.shields.io/npm/dm/@brikcss/bundles-output.svg?style=flat-square"></a>
+    <a href="https://www.npmjs.com/package/@bundles/bundles-output"><img alt="NPM downloads per month" src="https://img.shields.io/npm/dm/@bundles/bundles-output.svg?style=flat-square"></a>
     <!-- Travis branch. -->
     <a href="https://github.com/brikcss/bundles-output/tree/master"><img alt="Travis branch" src="https://img.shields.io/travis/rust-lang/rust/master.svg?style=flat-square&label=master"></a>
     <!-- Codacy. -->
