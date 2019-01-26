@@ -9,7 +9,7 @@ test('output bundles', () => {
   return bundle({
     bundles: [{
       id: 'test',
-      input: ['lib/bundles-output.js', 'test/bundles.spec.js'],
+      input: ['lib/bundles-output.js', 'test/bundles-output.spec.js'],
       bundlers: [{
         run: bundlerOutput,
         options: {
@@ -21,8 +21,8 @@ test('output bundles', () => {
     expect(result.success).toBe(true)
     expect(fs.pathExistsSync('.temp/lib/bundles-output.js')).toBe(true)
     expect(fs.readFileSync('.temp/lib/bundles-output.js', 'utf8')).toBe(fs.readFileSync('lib/bundles-output.js', 'utf8'))
-    expect(fs.pathExistsSync('.temp/test/bundles.spec.js')).toBe(true)
-    expect(fs.readFileSync('.temp/test/bundles.spec.js', 'utf8')).toBe(fs.readFileSync('test/bundles.spec.js', 'utf8'))
+    expect(fs.pathExistsSync('.temp/test/bundles-output.spec.js')).toBe(true)
+    expect(fs.readFileSync('.temp/test/bundles-output.spec.js', 'utf8')).toBe(fs.readFileSync('test/bundles-output.spec.js', 'utf8'))
     fs.removeSync('.temp')
   })
 })
