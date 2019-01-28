@@ -49,7 +49,7 @@ See [configuring Bundles](https://github.com/brikcss/bundles-core#configuration)
 
 **IMPORTANT: Unless you know what you're doing, `bundles-output` should be the last bundler in the `config.bundlers` Array, since it should typically run after all other bundlers have run.**
 
-The following configuration options are available:
+The following properties are available in `bundler.options`:
 
 - **`to`** _{String|Function}_ _(required)_ Directory to output compiled data to. Can be a callback Function which returns a String.
 - **`root`** _{String}_ _(process.cwd())_ Root directory for source input paths. For example, settings of `{ to: 'output', root: 'my/dir' }` with a source input of `['my/dir/one.md', 'my/dir/subdir/two.md']` will output files to `output/one.md` and `output/subdir/two.md`.
