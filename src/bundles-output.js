@@ -1,7 +1,7 @@
 /*! bundles-output.js | @author brikcss <https://github.com/brikcss> | @reference https://github.com/brikcss/bundles-output */
 
-const fs = require('fs-extra')
-const path = require('path')
+import fs from 'fs-extra'
+import path from 'path'
 
 module.exports = (bundle = {}, bundler = {}) => {
   const cwd = process.cwd()
