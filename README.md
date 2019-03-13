@@ -53,7 +53,7 @@ See [configuring Bundles](https://github.com/brikcss/bundles-core#configuration)
 
 The following properties are available in `bundler.options`:
 
-- **`to`** _{String|Function}_ _(required)_ Directory to output compiled data to. Can be a callback Function which returns a String.
+- **`to`** _{String|Function}_ _(required)_ Directory to output compiled data to. Can be a callback Function which returns a String. If return value is falsy, or is not a String, the file will not be output.
 - **`root`** _{String}_ _(process.cwd())_ Root directory for source input paths. For example, settings of `{ to: 'output', root: 'my/dir' }` with a source input of `['my/dir/one.md', 'my/dir/subdir/two.md']` will output files to `output/one.md` and `output/subdir/two.md`.
 - **`fs`** Options passed to [fs-extra's `outputFile` method](https://github.com/jprichardson/node-fs-extra), which are the same options passed to [node fs's `writeFile` method](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback). This, for example, gives user control over whether existing files are overwritten.
 
