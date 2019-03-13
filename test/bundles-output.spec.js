@@ -69,3 +69,30 @@ test('output relative to root directory', () => {
     fs.removeSync('.temp')
   })
 })
+
+test('do not output file if callback does not return a string', () => {
+  expect.assertions(3)
+  return bundle({
+    bundles: [{
+      id: 'skip',
+      input: ['.*.js'],
+      bundlers: [{
+        run: bundlerOutput,
+        options: {
+          to (file) {
+            if (file.source.path !== '.huskyrc.js') return false
+            return '.temp/.huskyrc.js'
+          }
+        }
+      }]
+    }]
+  }).then(result => {
+    expect(result.success).toBe(true)
+    const files = fs.readdirSync('.temp')
+    expect(files.length).toBe(1)
+    files.forEach(file => {
+      expect(file).toBe('.huskyrc.js')
+    })
+    fs.removeSync('.temp')
+  })
+})

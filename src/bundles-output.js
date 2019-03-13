@@ -24,8 +24,10 @@ module.exports = (bundle = {}, bundler = {}) => {
       : path.resolve(bundler.options.to, bundler.options.root
         ? path.relative(bundler.options.root, file.source.path)
         : file.source.path)
-    // Push promise to promises Array.
-    promises.push(fs.outputFile(outputPath, file.content, bundler.options.fs))
+    // If outputPath is a string, add promise to output file.
+    if (typeof outputPath === 'string') {
+      promises.push(fs.outputFile(outputPath, file.content, bundler.options.fs))
+    }
   })
   // Once all promises resolve, return the bundle.
   return Promise.all(promises).then((results) => bundle)
