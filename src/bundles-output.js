@@ -14,7 +14,7 @@ module.exports = (bundle = {}, bundler = {}) => {
       flag: 'w'
     }
   }, bundler.options)
-  // Create a promisess Array to later return.
+  // Create a promises Array to later return.
   const promises = []
   // Iterate through each output file.
   bundle.output.forEach((file, i) => {
@@ -26,7 +26,9 @@ module.exports = (bundle = {}, bundler = {}) => {
         : file.source.path)
     // If outputPath is a string, add promise to output file.
     if (typeof outputPath === 'string') {
-      promises.push(fs.outputFile(outputPath, file.content, bundler.options.fs))
+      const fsOptions = Object.assign({}, bundler.options.fs)
+      if (file.isBuffer) fsOptions.fs.encoding = null
+      promises.push(fs.outputFile(outputPath, file.content, fsOptions))
     }
   })
   // Once all promises resolve, return the bundle.
