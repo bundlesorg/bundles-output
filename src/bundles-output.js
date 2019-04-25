@@ -27,7 +27,7 @@ module.exports = (bundle = {}, bundler = {}) => {
     // If outputPath is a string, add promise to output file.
     if (typeof outputPath === 'string') {
       const fsOptions = Object.assign({}, bundler.options.fs)
-      if (file.isBuffer) fsOptions.fs.encoding = null
+      if (file.isBuffer) fsOptions.encoding = null
       promises.push(fs.outputFile(outputPath, file.content, fsOptions))
     }
   })
