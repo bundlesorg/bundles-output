@@ -9,7 +9,7 @@ module.exports = (bundle = {}, bundler = {}) => {
   bundler.options = Object.assign({
     to: cwd,
     root: cwd,
-    changedOnly: !!bundler.changed,
+    incremental: !!bundle.changed,
     fs: {
       encoding: 'utf8',
       flag: 'w'
@@ -18,7 +18,7 @@ module.exports = (bundle = {}, bundler = {}) => {
   // Create a promises Array to later return.
   const promises = []
   // Iterate through each output file.
-  bundle[bundler.options.changedOnly ? 'changed' : 'output'].forEach((file, i) => {
+  bundle[bundler.options.incremental ? 'changed' : 'output'].forEach((file, i) => {
     // Determine the output path.
     let outputPath = typeof bundler.options.to === 'function'
       ? bundler.options.to(file, bundler, bundle)
