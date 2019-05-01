@@ -69,6 +69,7 @@ const bundle = {
       options: {
         to: 'my/dir',
         root: 'src',
+        changedOnly: true,
       },
     },
   ],
