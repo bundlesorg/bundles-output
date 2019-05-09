@@ -1,6 +1,6 @@
 {
   "name": "@bundles/bundles-output",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "A bundler plugin for Bundles which outputs compiled results to a user defined path(s).",
   "keywords": ["brikcss", "bundles", "bundler", "output"],
   "license": "MIT",
