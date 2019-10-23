@@ -6,7 +6,7 @@ const bundlerOutput = require('../lib/bundles-output.js')
 
 test('output bundles', () => {
   expect.assertions(5)
-  return bundle({
+  return bundle.run({
     bundles: [{
       id: 'test',
       input: ['lib/bundles-output.js', 'test/bundles-output.spec.js'],
@@ -29,7 +29,7 @@ test('output bundles', () => {
 
 test('output with a dynamic output path', () => {
   expect.assertions(3)
-  return bundle({
+  return bundle.run({
     bundles: [{
       id: 'test',
       input: 'lib/bundles-output.js',
@@ -50,7 +50,7 @@ test('output with a dynamic output path', () => {
 
 test('output relative to root directory', () => {
   expect.assertions(3)
-  return bundle({
+  return bundle.run({
     bundles: [{
       id: 'test',
       input: 'lib/bundles-output.js',
@@ -72,7 +72,7 @@ test('output relative to root directory', () => {
 
 test('do not output file if callback does not return a string', () => {
   expect.assertions(3)
-  return bundle({
+  return bundle.run({
     bundles: [{
       id: 'skip',
       input: ['.*.js'],
